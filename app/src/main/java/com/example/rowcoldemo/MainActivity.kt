@@ -26,6 +26,7 @@ import androidx.compose.ui.unit.sp
 import com.example.rowcoldemo.ui.theme.RowColDemoTheme
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.ui.layout.LastBaseline
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,8 +53,8 @@ fun MainScreenPreview() {
 fun MainScreen(modifier: Modifier = Modifier) {
     Row {
         Text(
-            text = "Large Text",
-            modifier = Modifier.alignByBaseline(),
+            text = "Large Text\n\nMore Text",
+            modifier = Modifier.alignBy(LastBaseline), // Выравнивание по последней строке
             fontSize = 40.sp,
             fontWeight = FontWeight.Bold
         )
